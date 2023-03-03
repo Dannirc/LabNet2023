@@ -53,11 +53,11 @@ namespace Practica1
                     {
                         Taxi taxi = new Taxi();
                         Console.WriteLine(taxi.Detenerse());
-                        Console.Write("Ingrese precio del precio por km (1-1000):");
+                        Console.Write("Ingrese precio por km (1-1000):");
                         taxi._precioPorKM = float.Parse(Console.ReadLine());
                         while (taxi._precioPorKM < 1 || taxi._precioPorKM > 1000)
                         {
-                            Console.Write("Ingrese precio del precio por km (1-1000):");
+                            Console.Write("Ingrese precio por km (1-1000):");
                             taxi._precioPorKM = float.Parse(Console.ReadLine());
                         }
                         Console.Write("Ingrese cantidad de km del viaje (1-10000): ");
