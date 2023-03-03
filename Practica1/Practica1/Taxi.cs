@@ -19,7 +19,7 @@ namespace Practica1
 
         public override string Avanzar()
         {
-            return $"El taxi realizo un viaje con {pasajeros} pasajeros";
+            return $"El taxi realizo un viaje con {Pasajeros} pasajeros";
         }
 
         public override string Detenerse()

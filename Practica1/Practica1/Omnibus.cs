@@ -20,7 +20,7 @@ namespace Practica1
 
         public override string Avanzar()
         {
-            return $"El Omnibus realizo un recorrido con {pasajeros} pasajeros";
+            return $"El Omnibus realizo un recorrido con {Pasajeros} pasajeros";
         }
 
         public override string Detenerse()
@@ -31,10 +31,10 @@ namespace Practica1
         private float VentaTotal()
         {
             
-            return _precioPasaje*pasajeros;
+            return _precioPasaje*Pasajeros;
         }
 
-        public string totalVentas()
+        public string TotalVentas()
         {
             return $"El total de ventas fue de: ${VentaTotal()}";
         }

@@ -32,26 +32,25 @@ namespace Practica1
                             omnibus._precioPasaje = float.Parse(Console.ReadLine());
                         }
                         Console.Write("Ingrese Cantidad de Pasajeros (1-100): ");
-                        omnibus.pasajeros = int.Parse(Console.ReadLine());
-                        while (omnibus.pasajeros < 1 || omnibus.pasajeros > 100){
+                        omnibus.Pasajeros = int.Parse(Console.ReadLine());
+                        while (omnibus.Pasajeros < 1 || omnibus.Pasajeros > 100){
                             Console.Write("Ingrese Cantidad de Pasajeros (1-100): ");
-                            omnibus.pasajeros = int.Parse(Console.ReadLine());
+                            omnibus.Pasajeros = int.Parse(Console.ReadLine());
                         }
                         transportes.Add(omnibus);
                         Console.WriteLine(omnibus.Avanzar());
-                        Console.WriteLine(omnibus.totalVentas());
+                        Console.WriteLine(omnibus.TotalVentas());
                         cont_omnibus++;
                     }
                     else
                     {
-                        Console.Write("Ha alcanzado el maximo de Omnibus disponibles (5)");
+                        Console.WriteLine("Ha alcanzado el maximo de Omnibus disponibles (5)");
                     }
                 }
                 if (input == 2)
                 {
                     if (cont_taxi < 5)
                     {
-                        int km = 0;
                         Taxi taxi = new Taxi();
                         Console.WriteLine(taxi.Detenerse());
                         Console.Write("Ingrese precio del precio por km (1-1000):");
@@ -61,19 +60,19 @@ namespace Practica1
                             Console.Write("Ingrese precio del precio por km (1-1000):");
                             taxi._precioPorKM = float.Parse(Console.ReadLine());
                         }
-                        Console.Write("Ingrese cantidad de km del viaje: ");
-                        km = int.Parse(Console.ReadLine());
+                        Console.Write("Ingrese cantidad de km del viaje (1-10000): ");
+                        int km = int.Parse(Console.ReadLine());
                         while (km < 1 || km > 10000)
                         {
-                            Console.Write("Ingrese cantidad de km del viaje: ");
+                            Console.Write("Ingrese cantidad de km del viaje (1-10000): ");
                             km = int.Parse(Console.ReadLine());
                         }
                         Console.Write("Ingrese Cantidad de Pasajeros (1-4): ");
-                        taxi.pasajeros = int.Parse(Console.ReadLine());
-                        while (taxi.pasajeros < 1 || taxi.pasajeros > 4)
+                        taxi.Pasajeros = int.Parse(Console.ReadLine());
+                        while (taxi.Pasajeros < 1 || taxi.Pasajeros > 4)
                         {
                             Console.Write("Ingrese Cantidad de Pasajeros (1-4): ");
-                            taxi.pasajeros = int.Parse(Console.ReadLine());
+                            taxi.Pasajeros = int.Parse(Console.ReadLine());
                         }
                         transportes.Add(taxi);
                         Console.WriteLine(taxi.Avanzar());
@@ -82,7 +81,7 @@ namespace Practica1
                     }
                     else
                     {
-                        Console.Write("Ha alcanzado el maximo de Taxis disponibles (5)");
+                        Console.WriteLine("Ha alcanzado el maximo de Taxis disponibles (5)");
                     }
                 }
 
@@ -91,12 +90,12 @@ namespace Practica1
 
             Console.WriteLine("Se ingreso la siguiente coleccion de transportes: ");
 
-            imprimir("Omnibus", transportes);
-            imprimir("Taxi", transportes);
+            Imprimir("Omnibus", transportes);
+            Imprimir("Taxi", transportes);
             Console.ReadKey();
         }
 
-        public static void imprimir(string nombre_transporte, List<TransportePublico> transportes)
+        public static void Imprimir(string nombre_transporte, List<TransportePublico> transportes)
         {
             int cont = 0;
             for (int i = 0; i < 10; i++)
@@ -104,7 +103,7 @@ namespace Practica1
                 if (transportes[i].GetType().Name == nombre_transporte)
                 {
                     cont++;
-                    Console.WriteLine($"{transportes[i].GetType().Name} {cont}: {transportes[i].pasajeros.ToString()} pasajeros");
+                    Console.WriteLine($"{transportes[i].GetType().Name} {cont}: {transportes[i].Pasajeros} pasajeros");
                 }
             }
         }

@@ -21,7 +21,7 @@ namespace Practica1
         }
 
 
-        public int pasajeros
+        public int Pasajeros
         {
             get
             {
