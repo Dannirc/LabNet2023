@@ -1,0 +1,33 @@
+﻿@model List<LabNet.EF.MVC.Models.CustomersView>
+
+@{ 
+    ViewBag.Title = "Clientes";
+}
+<h1>Listado de Clientes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre Cliente</th>
+            <th scope="col">Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td scope="row">@customer.CustomerID</td>
+                <td scope="row">@customer.CompanyName</td>
+                <td scope="row">
+                    @Html.ActionLink("Editar", "Edit", "Customers", new { id = customer.CustomerID }, new { @class = "btn btn-warning", role = "button" })
+                    @Html.ActionLink("Eliminar", "Delete", new { id = customer.CustomerID }, new { onclick = "return confirm('Estas seguro de borrar?')", @class = "btn btn-danger", role = "button" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    @Html.ActionLink("Agregar Nuevo Cliente", "Insert", "Customers", null, new {@class = "btn btn-primary btn-large"})
+</div>

@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Pagina de Inicio";
+}
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">Bienvenido</h1>
+        <p class="lead">Practica 6 - MVC - LabNet2023</p>
+    </section>
+
+    <div class="row">
+        <section class="col-md-6" aria-labelledby="gettingStartedTitle">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title m-0">Listado de Clientes</h5>
+                </div>
+                <div class="card-body">
+                    <p>Esta seccion muestra el listado completo de los clientes</p>
+                    @Html.ActionLink("Listado", "Index", "Customers", null, new { @class = "btn btn-primary btn-large" })
+                </div>
+            </div>
+        </section>
+        <section class="col-md-6" aria-labelledby="librariesTitle">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title m-0">Agregar un Cliente</h5>
+                </div>
+                <div class="card-body">
+                    <p>Seccion para agregar un Cliente nuevo</p>
+                    @Html.ActionLink("Agregar", "Insert", "Customers", null, new { @class = "btn btn-primary btn-large" })
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
